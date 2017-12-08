@@ -8,6 +8,7 @@ X = np.array([[0,0], [0,1], [1,0], [1,1]])      # Buttons states array
 Y = np.array([ [0],   [1],   [1],   [0]])       # LED states array
  
 def sigmoid (x): return 1/(1 + np.exp(-x))      # activation function
+def sigmoid_deriv(x):return x * (1 - x) 
                                                 # weights on layer inputs
 Wh = np.random.uniform(size=(inputLayerSize, hiddenLayerSize))
 Wz = np.random.uniform(size=(hiddenLayerSize,outputLayerSize))
