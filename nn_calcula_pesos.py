@@ -16,7 +16,8 @@ Wz = np.random.uniform(size=(hiddenLayerSize,outputLayerSize))
 for i in range(epochs):
  
     H = sigmoid(np.dot(X, Wh))                  # calculate forward part
-    Z = np.dot(H,Wz)                            # 
+    Z = np.dot(H,Wz)                            # salida
+    Zr= np.around(Z)                            # salida con redondeo
     E = Y - Z                                   # calculate error
     dZ = E * L                                  # delta Z
     Wz +=  H.T.dot(dZ)                          # calculate backpropagation part
@@ -27,6 +28,8 @@ print("**************** error ****************")
 print(E)
 print("***************** output **************") 
 print(Z)   
+print("***************** output with round **************") 
+print(Zr) 
 print("*************** weights ***************") 
 print("input to hidden layer weights: ")     
 print(Wh)
